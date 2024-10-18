@@ -1,0 +1,21 @@
+Entity.association.model.CtmSupplyChainInfo.Entity.description=Supply Chain Information
+Entity.association.model.Entity.CtmSupplyChainInfo.description=Supply Chain Information
+Entity.attr.model.Entity.CtmExtensionOfRd=Extension of Review Date
+Entity.attr.model.Entity.CtmExtensionOfRd.description=<div>Extension of review date</div>
+Entity.attr.model.Entity.CtmExtensionReason=Extension Reason
+Entity.attr.model.Entity.CtmExtensionReason.description=<div>Extension Reason</div>
+Entity.attr.model.Entity.CtmSourceCustomerInfo=Source of Customer information
+Entity.attr.model.Entity.CtmSourceCustomerInfo.description=<div><span style="font-size:10pt"><span style="font-family:&quot;Verdana&quot;,sans-serif">Source of Customer information</span></span></div>
+Tenant.attr.model.CtmSupplyChainInfo.CtmBusinessStructure=Business Structure
+Tenant.attr.model.CtmSupplyChainInfo.CtmBusinessStructure.description=<div>Business Structure</div>
+Tenant.attr.model.CtmSupplyChainInfo.CtmCompanyName=Company Name
+Tenant.attr.model.CtmSupplyChainInfo.CtmCompanyName.description=<div>Company Name</div>
+Tenant.attr.model.CtmSupplyChainInfo.CtmEntityId=Entity Id
+Tenant.attr.model.CtmSupplyChainInfo.CtmEntityId.description=<div>Entity Id</div>
+Tenant.attr.model.CtmSupplyChainInfo.CtmScid=Supply Chain ID
+Tenant.attr.model.CtmSupplyChainInfo.CtmScid.description=<div>Supply Chain ID</div>
+Tenant.attr.refData.CtmCustomerInformation.Key.description=Key
+Tenant.attr.refData.CtmCustomerInformation.Value.description=Value
+Tenant.model.CtmSupplyChainInfo.description=Supply Chain information
+Tenant.refData.CtmCustomerInformation.description=Customer Information
+Tenant.rule.CtmBusinessRuleTest1.description=Business Rule

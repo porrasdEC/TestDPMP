@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <module id="Tenant" description="Default Tenant" tenantId="Tenant" major="1" minor="0" patch="3">
+    <loadAfter moduleRefId="Core" major="23" minor="21" patch="0" />
+    <loadAfter moduleRefId="RiskOrigins" major="23" minor="21" patch="0" />
+    <loadAfter moduleRefId="DataMovement" major="23" minor="21" patch="0" />
+    <loadAfter moduleRefId="Entity" major="23" minor="21" patch="0" />
+    <loadAfter moduleRefId="FinancialAnalysis" major="23" minor="21" patch="0" />
+    <loadAfter moduleRefId="Map" major="23" minor="21" patch="0" />
+    <loadAfter moduleRefId="RiskGrading" major="23" minor="21" patch="0" />
+    <loadAfter moduleRefId="MapPdModels" major="23" minor="21" patch="0" />
+    <loadAfter moduleRefId="DealStructuring" major="23" minor="21" patch="0" />
+    <loadAfter moduleRefId="MapLgdModels" major="23" minor="21" patch="0" />
+    <loadAfter moduleRefId="DealStructuringAdvanced" major="23" minor="21" patch="0" />
+    <loadAfter moduleRefId="RiskReturn" major="23" minor="21" patch="0" />
+    <loadAfter moduleRefId="Raroc" major="23" minor="21" patch="0" />
+    <loadAfter moduleRefId="Bvd" major="23" minor="21" patch="0" />
+    <loadAfter moduleRefId="Covenant" major="23" minor="21" patch="0" />
+    <loadAfter moduleRefId="CommercialRealEstate" major="23" minor="21" patch="0" />
+    <loadAfter moduleRefId="CommercialRealEstatePdRatings" major="23" minor="21" patch="0" />
+    <loadAfter moduleRefId="Reis" major="23" minor="21" patch="0" />
+    <loadAfter moduleRefId="CreditPresentation" major="23" minor="21" patch="0" />
+    <loadAfter moduleRefId="Workflow" major="23" minor="21" patch="0" />
+    <loadAfter moduleRefId="GlobalCashFlow" major="23" minor="21" patch="0" />
+    <loadAfter moduleRefId="SpreadingAutomation" major="23" minor="21" patch="0" />
+    <loadAfter moduleRefId="Salesforce" major="23" minor="21" patch="0" />
+    <loadAfter moduleRefId="MapLgdModelsAdvanced" major="23" minor="21" patch="0" />
+    <loadAfter moduleRefId="ClimateEsgScorePredictor" major="23" minor="21" patch="0" />
+    <loadAfter moduleRefId="TermSheet" major="23" minor="21" patch="0" />
+    <loadAfter moduleRefId="FirbAnalysis" major="23" minor="21" patch="0" />
+    <loadAfter moduleRefId="Benchmark" major="23" minor="21" patch="0" />
+    <loadAfter moduleRefId="RiskCalcLgd" major="23" minor="21" patch="0" />
+    <loadAfter moduleRefId="ConfigConsole" major="23" minor="21" patch="0" />
+    <loadAfter moduleRefId="CommercialRealEstateLgdModels" major="23" minor="21" patch="0" />
+    <loadAfter moduleRefId="BiStarSchema" major="23" minor="21" patch="0" />
+    <loadAfter moduleRefId="Marq" major="23" minor="21" patch="0" />
+    <loadAfter moduleRefId="BusinessInsights" major="23" minor="21" patch="0" />
+    <loadAfter moduleRefId="MoodysFinal" major="1" minor="0" patch="0" />
+    <probePath path="Config\metadata\Tenant\ra" />
+  </module>
+  <models>
+    <model id="Rules" source="custom_rules" versionEnable="true" dataProvider="postgres" modelCategory="system" resourceModuleId="Core" standardConfig="true">
+      <audit time="2016-09-14T19:07:51.630172Z" />
+    </model>
+    <model id="RuleExecution" source="custom_rule_execution" dataProvider="postgres" modelCategory="system" resourceModuleId="Core" standardConfig="true">
+      <audit time="2016-09-14T19:07:52.9692616Z" />
+    </model>
+    <model id="Report" source="custom_report" versionEnable="true" dataProvider="postgres" modelCategory="system" resourceModuleId="Core" root="true" standardConfig="true">
+      <audit time="2017-11-24T19:07:51.630172Z" />
+    </model>
+    <model id="Connector" source="custom_connector" versionEnable="true" dataProvider="postgres" modelCategory="system" resourceModuleId="Core" root="true" standardConfig="true">
+      <audit time="2020-10-08T20:07:51.630172Z" />
+    </model>
+    <model id="Widget" source="custom_widget" versionEnable="true" dataProvider="postgres" modelCategory="system" resourceModuleId="Core" root="true" standardConfig="true">
+      <audit time="2020-10-08T20:07:52.630172Z" />
+    </model>
+    <model id="UserRole" source="custom_lookup" dataProvider="postgres" modelCategory="ref" resourceModuleId="Core" standardConfig="true">
+      <audit userId="admin" time="2016-09-22T07:39:52.0141859Z" />
+    </model>
+    <model id="BusinessPortfolio" source="custom_lookup" hierarchy="true" dataProvider="postgres" modelCategory="ref" resourceModuleId="Core">
+      <audit userId="admin" time="20170220T044829" />
+    </model>
+    <model id="CtmCustomerInformation" source="custom_lookup" dataProvider="postgres" modelCategory="ref">
+      <attribute id="Type" dataType="string" primaryField="true" keyGenerationStrategy="assigned" />
+      <attribute id="KeyInt" dataType="integer" />
+      <attribute id="Key" dataType="string" primaryField="true" primaryFieldOrder="2" keyGenerationStrategy="assigned" />
+      <attribute id="Value" dataType="string" />
+      <audit userId="admin" time="20240920T144114" />
+    </model>
+    <model id="CtmSupplyChainInfo" source="ctmsupplychaininfo" versionEnable="true" dataProvider="postgres" referenceModule="Entity" excludeFromReportData="true">
+      <attribute id="CtmScid" dataType="integer" primaryField="true" />
+      <attribute id="CtmBusinessStructure" dataType="string" maxLength="50" />
+      <attribute id="CtmCompanyName" dataType="string" maxLength="50" />
+      <attribute id="CtmEntityId" dataType="long" />
+      <audit userId="admin" time="20240920T161925" />
+    </model>
+    <model id="ProductType" source="custom_lookup" dataProvider="postgres" modelCategory="ref" resourceModuleId="DealStructuring">
+      <audit userId="admin" time="20201210T190301" />
+    </model>
+    <model id="AdvProductTypeViewMapping" source="custom_lookup" dataProvider="postgres" modelCategory="ref" resourceModuleId="DealStructuringAdvanced">
+      <audit userId="admin" time="20170919T214254" />
+    </model>
+    <model id="Entity" source="entity" versionEnable="true" dataProvider="postgres" resourceModuleId="Entity" root="true" createUniqueRule="ValidateUniquenessChecking" updateUniqueRule="ValidateUniquenessChecking" includeInDataGridCache="true">
+      <attribute id="CtmExtensionOfRd" dataType="date" />
+      <attribute id="CtmExtensionReason" dataType="string" maxLength="50" />
+      <attribute id="CtmSourceCustomerInfo" dataType="string" refId="CtmCustomerInformation" />
+      <attribute id="InternalRating" dataType="string" maxLength="50" />
+      <modelRef id="CtmSupplyChainInfo" relation="oneToMany" srcModelId="Entity" modelId="CtmSupplyChainInfo">
+        <refAttribute id="CtmEntityId" sourceId="EntityId" />
+      </modelRef>
+      <audit userId="admin" time="20241007T164359" />
+    </model>
+  </models>
+  <viewModels>
+    <viewModel id="CtmSupplyChainViewModel" primaryModel="CtmSupplyChainInfo" description="Supply Chain View Model" resourceModuleId="Tenant">
+      <group id="Default" order="1">
+        <attribute id="CtmScid" modelId="CtmSupplyChainInfo" modelFieldId="CtmScid" controlType="text" order="1" />
+        <attribute id="CtmBusinessStructure" modelId="CtmSupplyChainInfo" modelFieldId="CtmBusinessStructure" controlType="text" order="2" />
+        <attribute id="CtmCompanyName" modelId="CtmSupplyChainInfo" modelFieldId="CtmCompanyName" controlType="text" order="3" />
+        <attribute id="CtmEntityId" modelId="CtmSupplyChainInfo" modelFieldId="CtmEntityId" controlType="text" order="4" />
+      </group>
+      <audit userId="admin" time="20240920T165905" />
+    </viewModel>
+    <viewModel id="EntityEdit" primaryModel="Entity" description="" resourceModuleId="Entity" allowDraft="true">
+      <group id="BasicDetails" type="accordion" order="1">
+        <group id="CustomerDetails" order="1">
+          <attribute id="CtmExtensionOfRd" modelId="Entity" modelFieldId="CtmExtensionOfRd" controlType="datepicker" order="1">
+            <runRule>CtmBusinessRuleTest1</runRule>
+          </attribute>
+          <attribute id="CtmExtensionReason" modelId="Entity" modelFieldId="CtmExtensionReason" controlType="text" action="show" actionRule="CtmBusinessRuleTest1" order="2" />
+          <attribute id="CtmSourceCustomerInfo" modelId="Entity" modelFieldId="CtmSourceCustomerInfo" controlType="singleselect" order="3" />
+          <attribute id="EntityType" readonly="true" modelId="Entity" modelFieldId="EntityType" controlType="singleselect" order="4" />
+          <attribute id="LongName" modelId="Entity" modelFieldId="LongName" controlType="text" action="readonly" actionRule="IsSalesforceEntity" order="5">
+            <validator>
+              <required value="true" />
+            </validator>
+            <runRule>IsSalesforceEntity</runRule>
+          </attribute>
+          <attribute id="ShortName" modelId="Entity" modelFieldId="ShortName" controlType="text" order="6">
+            <validator>
+              <required value="true" />
+            </validator>
+          </attribute>
+          <attribute id="EntityId" readonly="true" modelId="Entity" modelFieldId="EntityId" controlType="text" order="7">
+            <runRule>HasKycLicense</runRule>
+            <runRule>ShowClimateAndEsgTab</runRule>
+          </attribute>
+          <attribute id="SystemId" modelId="Entity" modelFieldId="SystemId" controlType="text" action="readonly" actionRule="IsSalesforceEntity" order="8" />
+          <attribute id="LegalEntity" modelId="Entity" modelFieldId="LegalEntity" controlType="text" order="9" />
+          <attribute id="TaxId" modelId="Entity" modelFieldId="TaxId" controlType="text" order="10" />
+          <attribute id="CustomerSince" modelId="Entity" modelFieldId="CustomerSince" controlType="datepicker" order="11">
+            <validator>
+              <rule ruleName="ValidateCustomerSince" />
+            </validator>
+            <runRule>ValidateCustomerSince</runRule>
+          </attribute>
+          <attribute id="CountryOfInc" modelId="Entity" modelFieldId="CountryOfInc" controlType="singleselect" order="12" />
+          <attribute id="ProvinceStateOfIncorporation" modelId="Entity" modelFieldId="ProvinceStateOfIncorporation" controlType="singleselect" order="13">
+            <dependsOnAttributes>CountryOfInc</dependsOnAttributes>
+          </attribute>
+          <attribute id="EstablishmentDate" modelId="Entity" modelFieldId="EstablishmentDate" controlType="datepicker" order="14">
+            <validator>
+              <rule ruleName="ValidateDateOfIncorporation" />
+            </validator>
+            <runRule>ValidateDateOfIncorporation</runRule>
+          </attribute>
+          <attribute id="RegistrationNumber" modelId="Entity" modelFieldId="RegistrationNumber" controlType="text" order="15" />
+          <attribute id="OnList" modelId="Entity" modelFieldId="OnList" controlType="singleselect" order="16" />
+          <attribute id="ConnectedParty" modelId="Entity" modelFieldId="ConnectedParty" controlType="checkbox" order="17" />
+          <attribute id="Descriptions" modelId="Entity" modelFieldId="Descriptions" controlType="mtext" order="18" />
+          <attribute id="Gc23" hidden="true" modelId="Entity" modelFieldId="Gc23" controlType="text" action="show" actionRule="ShowMonYearBusinessStarted" order="19" />
+          <attribute id="Gc22" hidden="true" modelId="Entity" modelFieldId="Gc22" controlType="text" action="show" actionRule="ShowMonYearBusinessStarted" order="20" />
+          <attribute id="LockedDate" hidden="true" modelId="Entity" modelFieldId="LockedDate" controlType="datepicker" order="21" />
+          <attribute id="ExternalDataSources" hidden="true" modelId="Entity" modelFieldId="ExternalDataSources" controlType="multiselect" order="22" />
+          <attribute id="LockedBy" hidden="true" modelId="Entity" modelFieldId="LockedBy" controlType="singleselect" order="23" />
+          <attribute id="IsLocked" hidden="true" modelId="Entity" modelFieldId="IsLocked" controlType="checkbox" order="24" />
+          <attribute id="Liquidity" hidden="true" modelId="Entity" modelFieldId="Liquidity" controlType="text" decimals="2" order="25" />
+          <attribute id="NetWorth" hidden="true" modelId="Entity" modelFieldId="NetWorth" controlType="text" decimals="2" order="26" />
+        </group>
+        <group id="ContactDetails" order="5" />
+        <group id="Address" order="6" />
+      </group>
+      <group id="Documents" order="4" />
+      <group id="BvdBankFocus" action="show" actionRule="IsBvdEntity" order="5" />
+      <group id="Proposals" order="6" />
+      <group id="BvdOsiris" action="show" actionRule="IsBvdOsirisEntity" order="7" />
+      <group id="KnowYourCustomer" action="show" actionRule="HasKycLicense" order="8" />
+      <group id="SupplyChainInformation" order="9">
+        <viewModelRef id="CtmSupplyChainViewModel" order="1" type="inlineGrid" />
+      </group>
+      <audit userId="admin" time="20240920T215255" />
+    </viewModel>
+  </viewModels>
+  <references>
+    <ref id="UserRole" modelRefId="UserRole" type="USERROLE" resourceModuleId="Core">
+      <audit userId="admin" time="20240918T195421" />
+    </ref>
+    <ref id="BusinessPortfolio" modelRefId="BusinessPortfolio" hierarchical="true" type="BUSINESSPORTFOLIO" noChildIsLeaf="true" numberOfLevels="3" resourceModuleId="Core">
+      <audit userId="admin" time="20240919T151723" />
+    </ref>
+    <ref id="CtmCustomerInformation" displayFormat="" modelRefId="CtmCustomerInformation" type="CTMCUSTOMERINFORMATION" resourceModuleId="Tenant">
+      <query>
+        <projection>
+          <key modelFieldId="Key" />
+          <display modelFieldIds="Value" format="" />
+        </projection>
+      </query>
+      <audit userId="admin" time="20240920T144115" />
+    </ref>
+    <ref id="ProductType" modelRefId="ProductType" type="PRODUCTTYPE" shared="false" resourceModuleId="DealStructuring" multiModule="true">
+      <audit userId="admin" time="20240920T223124" />
+    </ref>
+    <ref id="AdvProductTypeViewMapping" modelRefId="AdvProductTypeViewMapping" type="ADVPRODUCTTYPEVIEWMAPPING" shared="false" resourceModuleId="DealStructuringAdvanced" multiModule="true">
+      <audit userId="admin" time="20240920T224714" />
+    </ref>
+  </references>
+</metadata>
